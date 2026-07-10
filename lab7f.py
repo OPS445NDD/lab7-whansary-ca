@@ -2,20 +2,27 @@
 # Student ID: whansary
 
 class Time:
-    """Simple object type for time of the day.
-    data attributes: hour, minute, second
-    function attributes: __init__, time_to_sec, format_time,
-                         change_time, sum_times, valid_time
-    """
+    """Simple object type for time of the day."""
 
     def __init__(self, hour=12, minute=0, second=0):
-        """constructor for time object"""
         self.hour = hour
         self.minute = minute
         self.second = second
 
+    def __str__(self):
+        """Return a string representation using colons."""
+        return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
+
+    def __repr__(self):
+        """Return a string representation using periods."""
+        return f'{self.hour:02d}.{self.minute:02d}.{self.second:02d}'
+
+    def __add__(self, t2):
+        """Return the result using the sum_times method."""
+        return self.sum_times(t2)
+
     def format_time(self):
-        """Return time object as a formatted string"""
+        """Return time object as a formatted string."""
         return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
 
     def sum_times(self, t2):
@@ -41,7 +48,7 @@ class Time:
         return seconds
 
     def valid_time(self):
-        """Check for the validity of the time object attributes."""
+        """Check whether the time object contains valid values."""
         if self.hour < 0 or self.minute < 0 or self.second < 0:
             return False
 

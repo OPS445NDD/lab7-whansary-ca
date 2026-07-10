@@ -18,23 +18,36 @@ def format_time(t):
     return f'{t.hour:02d}:{t.minute:02d}:{t.second:02d}'
 
 
+def time_to_sec(time):
+    """Convert a time object to seconds from midnight."""
+    minutes = time.hour * 60 + time.minute
+    seconds = minutes * 60 + time.second
+    return seconds
+
+
+def sec_to_time(seconds):
+    """Convert seconds to a Time object."""
+    time = Time()
+    minutes, time.second = divmod(seconds, 60)
+    time.hour, time.minute = divmod(minutes, 60)
+    return time
+
+
 def sum_times(t1, t2):
     """Add two time objects and return the sum."""
-    sum = Time(0, 0, 0)
+    seconds = time_to_sec(t1) + time_to_sec(t2)
+    return sec_to_time(seconds)
 
-    sum.hour = t1.hour + t2.hour
-    sum.minute = t1.minute + t2.minute
-    sum.second = t1.second + t2.second
 
-    while sum.second >= 60:
-        sum.second -= 60
-        sum.minute += 1
+def change_time(time, seconds):
+    """Modify a time object by adding or subtracting seconds."""
+    new_time = sec_to_time(time_to_sec(time) + seconds)
 
-    while sum.minute >= 60:
-        sum.minute -= 60
-        sum.hour += 1
+    time.hour = new_time.hour
+    time.minute = new_time.minute
+    time.second = new_time.second
 
-    return sum
+    return None
 
 
 def valid_time(t):
