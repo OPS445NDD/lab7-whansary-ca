@@ -72,20 +72,31 @@ jobs:
       uses: classroom-resources/autograding-io-grader@v1
       with:
         test-name: lab7g
-        setup-command: python3 ./CheckLab7.py -f -v
-        command: python3 ./CheckLab7.py -f -v lab7g
+        command: python3 ./lab7g.py
         input: ''
-        expected-output: ''
-        comparison-method: contains
+        expected-output: |
+          print() call in main on a: object_in_main
+          print() call in function1 on a: object_function1
+          print() call in main on a: object_in_main
+          print() call in function2 on a: function2_object
+          print() call in main on a: object_in_main
+        comparison-method: exact
         timeout: 10
         max-score: 1
     - name: lab7h
       id: lab7h
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: classroom-resources/autograding-io-grader@v1
       with:
         test-name: lab7h
-        setup-command: python3 ./CheckLab7.py -f -v
-        command: python3 ./CheckLab7.py -f -v lab7h
+        command: python3 ./lab7h.py
+        input: ''
+        expected-output: |
+          print() in main on schoolName: Seneca College
+          print() in function1 on schoolName: Seneca College
+          print() in main on schoolName: Seneca College
+          print() in function2 on schoolName: Seneca College
+          print() in main on schoolName: Seneca College
+        comparison-method: exact
         timeout: 10
         max-score: 1
     - name: lab7i
