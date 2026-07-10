@@ -19,7 +19,7 @@ test_b2_sum_times (__main__.lab7a.test_b2_sum_times)
 [Lab 7] - [Investigation 1] - [Part 1] - Test for sum_times() - should provide the correct output ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.011s
+Ran 8 tests in 0.016s
 
 OK
 
@@ -59,7 +59,7 @@ test_b2_sec_to_time (__main__.lab7c.test_b2_sec_to_time)
 [Lab 7] - [Investigation 1] - [Part 3] - Test for sec_to_time() function in .lab7c.py ... ok
 
 ----------------------------------------------------------------------
-Ran 7 tests in 0.011s
+Ran 7 tests in 0.013s
 
 OK
 
@@ -103,7 +103,7 @@ test_b4_repr (__main__.lab7e.test_b4_repr)
 [Lab 7] - [Investigation 2] - [Part 2] - Test for __repr__ method in ./lab7e.py ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.000s
+Ran 5 tests in 0.001s
 
 OK
 
@@ -122,6 +122,20 @@ Ran 4 tests in 0.000s
 
 OK
 
+========== lab7g ==========
+print() call in main on a: object_in_main
+print() call in function1 on a: object_function1
+print() call in main on a: object_in_main
+print() call in function2 on a: function2_object
+print() call in main on a: object_in_main
+
+========== lab7h ==========
+print() in main on schoolName: Seneca College
+print() in function1 on schoolName: Seneca College
+print() in main on schoolName: Seneca College
+print() in function2 on schoolName: Seneca College
+print() in main on schoolName: Seneca College
+
 ========== lab7i ==========
 test_0 (__main__.lab7i.test_0)
 [Lab 7] - [Investigation 3] - [Part 3] - Local/Global Scope - Test for file creation: ./lab7i.py ... ok
@@ -131,7 +145,7 @@ test_b2_run (__main__.lab7i.test_b2_run)
 [Lab 7] - [Investigation 3] - [Part 3] - Global scope - Test for correct output: ./lab7i.py ... ok
 
 ----------------------------------------------------------------------
-Ran 3 tests in 0.021s
+Ran 3 tests in 0.022s
 
 OK
 
